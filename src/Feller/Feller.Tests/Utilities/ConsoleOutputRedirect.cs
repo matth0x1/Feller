@@ -18,18 +18,13 @@ namespace Feller.Tests.Utilities
             Console.SetOut(_consoleOutWriter);
         }
 
-        public string GetOuptutAsString()
+        public string GetOuptut()
         {
             _consoleOutWriter.Flush();
             var output = _sb.ToString();
             _sb.Clear();
 
             return output;
-        }
-
-        public StringReader GetOuptutAsStringReader()
-        {
-            return new StringReader(GetOuptutAsString());
         }
 
         public void Dispose()
