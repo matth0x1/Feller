@@ -8,7 +8,7 @@ namespace Feller.Core
 {
     public abstract class FellerLoggerBase : ILogger
     {
-        public string CategoryName { get; internal set; }
+        public string CategoryName { get; set; }
         internal IExternalScopeProvider ScopeProvider { private get; set; }
 
         public IDisposable BeginScope<TState>(TState state)
@@ -18,7 +18,6 @@ namespace Feller.Core
 
         protected abstract void Log(IEnumerable<KeyValuePair<string, object>> fields);
         private const string DefaultMessageName = "{OriginalFormat}";
-
 
         public bool IsEnabled(LogLevel logLevel) => true;
 
@@ -40,6 +39,7 @@ namespace Feller.Core
 
             fields.Add(Timestamp, DateTimeOffset.Now);
             fields.Add(Level, logLevel);
+            fields.Add(BaseFields.CategoryName, CategoryName);
 
             if (eventId != default)
             {
