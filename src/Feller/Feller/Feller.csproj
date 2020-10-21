@@ -5,6 +5,9 @@
     <NullableReferenceTypes>true</NullableReferenceTypes>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    
+    <VersionPrefix>0.0.1</VersionPrefix>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
