@@ -43,4 +43,4 @@ jobs:
       
     - name: NuGet Package Upload
       if: github.ref == 'refs/heads/master'
-      run: dotnet nuget push ${{env.working-directory}}/Feller/bin/Release/*.nupkg --skip-duplicate --api-key ${{ secrets.NUGET }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push ${{env.working-directory}}/Feller/bin/Release/*.nupkg --skip-duplicate --api-key ${{ secrets.NUGET }} --source https://api.nuget.org/v3/index.json --skip-duplicate
