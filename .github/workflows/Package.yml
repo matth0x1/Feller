@@ -17,7 +17,7 @@ jobs:
         uses: lewagon/wait-on-check-action@v0.1
         with:
           ref: master
-          check-name: tests
+          check-name: Test
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 20
     
